@@ -38,7 +38,7 @@ def code_to_command(code, index):
     adressed_commands_dict = dict(zip(keys, values))  # словарь адресных команд
     if code[0] in keys:
         if code[1] in "01234567":
-            return adressed_commands_dict[code[0]] + "0x" + code[1:]
+            return adressed_commands_dict[code[0]] + "$S" + code[1:]
         else:
             return adressed_commands_dict[code[0]] + indirect_addressing_command(code, index)
     else:
